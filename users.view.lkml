@@ -1,26 +1,24 @@
 view: users {
   sql_table_name: demo_db.users ;;
 
-  #example of templated filter on a measure
-
   filter: state_name {
   }
+
+  # example of templated filter on a measure
 
   measure: state_count {
     type: sum
     sql: CASE WHEN {% condition state_name%} ${state} {% endcondition %} THEN 1 ELSE 0 END ;;
   }
 
-  #example of templated filter on a dimension
-
-  filter: city_filter {
-    type: number
-  }
+  # example of templated filter on a dimension
 
   dimension: city_compare {
     type: string
-    sql: CASE WHEN {% condition city_filter %} ${city} {% endcondition %} THEN ${city} ELSE 'All other cities' END  ;;
+    sql: CASE WHEN {% condition state_name %} ${state} {% endcondition %} THEN ${city} ELSE 'All other states' END  ;;
   }
+
+  # original fields
 
   dimension: id {
     primary_key: yes
