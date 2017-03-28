@@ -42,6 +42,13 @@ view: products {
     sql: ${TABLE}.sku ;;
   }
 
+  dimension: price_tier {
+    type: tier
+    tiers: [50,100,150]
+    style: integer
+    sql: ${retail_price} ;;
+  }
+
   measure: count {
     type: count
     drill_fields: [id, item_name, inventory_items.count]
