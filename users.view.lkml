@@ -98,7 +98,7 @@ view: users {
   }
   measure: max_age {
     type: max
-    sql: $[${age}];;
+    sql: ${age};;
   }
 
 
