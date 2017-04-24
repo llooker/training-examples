@@ -60,3 +60,7 @@ explore: user_data {
 }
 
 explore: users {}
+
+explore: orders_extended {
+  view_label: "Orders - Timeframe Selector"
+}

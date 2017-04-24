@@ -1,6 +1,8 @@
 view: users {
   sql_table_name: demo_db.users ;;
 
+  # a filter used for templated filters
+
   filter: state_name {
   }
 
@@ -13,7 +15,7 @@ view: users {
 
   # example of templated filter on a dimension
 
-  dimension: city_compare {
+  dimension: state_compare {
     type: string
     sql: CASE WHEN {% condition state_name %} ${state} {% endcondition %} THEN ${city} ELSE 'All other states' END  ;;
   }
