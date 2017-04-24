@@ -70,6 +70,11 @@ view: users {
     sql: ${TABLE}.gender ;;
   }
 
+  dimension: full_name {
+    type: string
+    sql: CONCAT(${TABLE}.first_name, ' ', ${TABLE}.last_name) ;;
+  }
+
   dimension: last_name {
     type: string
     sql: ${TABLE}.last_name ;;
@@ -88,6 +93,10 @@ view: users {
   measure: count {
     type: count
     drill_fields: [detail*]
+  }
+  measure: max_age {
+    type: max
+    sql: $[${age}];;
   }
 
 
