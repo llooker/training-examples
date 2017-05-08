@@ -1,6 +1,6 @@
 view: b {
 sql_table_name: users ;;
 
-dimension: id {}
+dimension: id_view_b {}
 
 }

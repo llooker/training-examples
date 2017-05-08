@@ -6,7 +6,7 @@ include: "*.dashboard.lookml"  # include all dashboards in this project
 explore: testing_from {
   from: b
   join: a {
-    sql_on: ${a.b_id} = ${testing_from.id} ;;
+    sql_on: ${a.id_view_b} = ${testing_from.id_view_b} ;;
     relationship: one_to_one
   }
 }

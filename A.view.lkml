@@ -1,10 +1,10 @@
 view: a {
 sql_table_name: orders ;;
 
-dimension: id {}
+dimension: id_view_a {}
 
-dimension: b_id {
-  sql: ${b.id} ;;
+dimension: id_view_b {
+  sql: ${b.id_view_b} ;;
 }
 
 }
